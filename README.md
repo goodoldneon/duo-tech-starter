@@ -11,13 +11,23 @@
 
 ### Setup
 
+Activate the virtual environment:
+
+```bash
+source .venv/bin/activate
+```
+
 Start the server by running:
 
-`python twisted/server.py`
+```bash
+python twisted/server.py
+```
 
 You'll need to restart the server every time you make a change. If that gets annoying, I recommend running it using `nodemon` (an npm package):
 
-`nodemon --exec python twisted/server.py`
+```bash
+nodemon --exec python twisted/server.py
+```
 
 I recommend using [Postman](https://www.postman.com) to play around with the routes. But you can just use `curl` if you're feeling spicy.
 
@@ -32,7 +42,26 @@ Routes:
 
 Stuff to do:
 
-- Try hitting `GET localhost:8000`. You should see the "Welcome!" message.
-- Try hitting `GET localhost:8000/widgets`. You should see the a list of "widget" objects.
-- Try hitting `POST localhost:8000/widgets` with an object as the body. Hitting `GET localhost:8000/widgets` should show the same object.
-- Try hitting `GET localhost:8000/slow`. It'll take 10 seconds to response, but you can still hit the other routes in the meantime. That's because the route is non-blocked.
+- Hit `GET localhost:8000`. You should see the "Welcome!" message.
+- Hit `GET localhost:8000/widgets`. You should see the a list of "widget" objects.
+- Hit `POST localhost:8000/widgets` with an object as the body. Hitting `GET localhost:8000/widgets` should show the same object.
+- Hit `GET localhost:8000/slow`. It'll take 10 seconds to response, but you can still hit the other routes in the meantime. That's because the route is non-blocked.
+- Look at the comments in `twisted/server.py` for more stuff to do.
+
+## Testing
+
+### Setup
+
+Activate the virtual environment:
+
+```bash
+source .venv/bin/activate
+```
+
+### Usage
+
+Run tests:
+
+```bash
+pytest testing
+```
