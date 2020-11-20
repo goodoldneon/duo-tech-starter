@@ -9,6 +9,14 @@
 
 ## Cyclone Server
 
+### Background
+
+Our backend uses Twisted and Cyclone.
+
+Twisted is used for networking and asynchronicity. We make heavy use of its deferreds to create asynchronous, non-blocking servers. We originally used deferreds because they allowed us to write asynchronous code before the `asyncio` module existed. Eventually, we want to migrate from `twisted.internet.defer.inlineCallbacks` generators to `async`/`await` coroutines, and also start using the standard library's event loop.
+
+Cyclone is a web framework that implements the Tornado API. We originally picked Cyclone because it let us use Twisted's event loop, but Tornado had its own. Eventually we want to migrate from Cyclone to Tornado, since Tornado can now use the standard library's event loop.
+
 ### Setup
 
 Activate the virtual environment:
@@ -49,6 +57,8 @@ Stuff to do:
 - Look at the comments in `cyclone/server.py` for more stuff to do.
 
 ## Testing
+
+We use the `mock` library frequently in our unit tests.
 
 ### Setup
 
