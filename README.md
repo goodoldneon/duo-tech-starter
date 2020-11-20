@@ -7,7 +7,7 @@
 3. Install dependencies.
    - Run `pip install -r requirements.txt`
 
-## Twisted Server
+## Cyclone Server
 
 ### Setup
 
@@ -20,13 +20,13 @@ source .venv/bin/activate
 Start the server by running:
 
 ```bash
-python twisted/server.py
+python cyclone/server.py
 ```
 
 You'll need to restart the server every time you make a change. If that gets annoying, I recommend running it using `nodemon` (an npm package):
 
 ```bash
-nodemon --exec python twisted/server.py
+nodemon --exec python cyclone/server.py
 ```
 
 I recommend using [Postman](https://www.postman.com) to play around with the routes. But you can just use `curl` if you're feeling spicy.
@@ -46,7 +46,7 @@ Stuff to do:
 - Hit `GET localhost:8000/widgets`. You should see the a list of "widget" objects.
 - Hit `POST localhost:8000/widgets` with an object as the body. Hitting `GET localhost:8000/widgets` should show the same object.
 - Hit `GET localhost:8000/slow`. It'll take 10 seconds to response, but you can still hit the other routes in the meantime. That's because the route is non-blocked.
-- Look at the comments in `twisted/server.py` for more stuff to do.
+- Look at the comments in `cyclone/server.py` for more stuff to do.
 
 ## Testing
 
